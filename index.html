@@ -21,14 +21,18 @@
         </div>
         <div class="row">
             <div class="col-12 text-center">
-                <iframe src="Game/index.html" width="960" height="600" frameborder="0" style="border:0" allowfullscreen
+                <iframe id="game" src="Game/index.html" width="960" height="600" frameborder="0" style="border:0" allowfullscreen
                     aria-hidden="false" tabindex="0"></iframe>
             </div>
         </div>
     </div>
     <script>
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-            alert("Mobile device detected. Please use a desktop or laptop to play the game.");
+            var game = document.getElementById('game');
+            // set iframe content to device not supported, please use desktop or laptop to play
+            game.src = "device-not-supported.html";
+            game.width = "100%";
+            game.height = "100%";
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
